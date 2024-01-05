@@ -1,0 +1,239 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-family: 'Roboto', sans-serif;
+}
+
+:root {
+	--tomato: hsl(4, 100%, 67%);
+	--tomato-30: hsla(4, 100%, 67%, 0.485);
+	--tomato-50: hsla(4, 100%, 67%, 0.1);
+	--neutral-1: hsl(235, 18%, 26%);
+	--neutral-2: hsl(234, 29%, 20%);
+	--neutral-2-07: hsla(234, 29%, 20%, 0.7);
+	--border-neutral: hsl(231, 7%, 60%);
+	--border-red: hsla(4, 65%, 39%, 0.548);
+	--white: hsl(0, 0%, 100%);
+}
+body {
+	background-color: var(--neutral-1);
+}
+
+/* POPUP MOBILE */
+.popup {
+	display: none;
+	justify-content: space-between;
+	flex-direction: column;
+	min-height: 100vh;
+	padding: 1.5rem;
+	max-width: 500px;
+	background: var(--white);
+}
+.popup-body {
+	margin-top: 8rem;
+}
+.popup h2 {
+	margin: 2rem 0 1.5rem 0;
+	font-size: 2.5rem;
+	line-height: 2.5rem;
+}
+.popup-info {
+	line-height: 1.5rem;
+}
+
+.email-adress {
+	font-weight: 700;
+}
+
+/* APP CONTAINER */
+.app-container {
+	display: flex;
+	flex-direction: column;
+	max-width: 576px;
+	font-weight: 400;
+	margin: 0 auto;
+	min-height: 100vh;
+
+	background-color: var(--white);
+}
+/* HEADER */
+header {
+	background-image: url('./img/illustration-sign-up-mobile.svg');
+	height: 300px;
+	background-repeat: no-repeat;
+	background-position: top center;
+	background-size: cover;
+	border-radius: 0 0 18px 18px;
+}
+/* MAIN SECTION */
+main {
+	padding: 0.5rem 1.5rem 1.5rem 1.5rem;
+}
+
+main h1 {
+	font-size: 2.35rem;
+}
+main .main-paragraph {
+	margin: 1.5rem 0;
+}
+
+.update-list {
+	list-style: none;
+}
+.update-list li {
+	display: flex;
+	align-items: start;
+	margin-bottom: 1rem;
+}
+.update-list li:last-child {
+	margin-bottom: 2rem;
+}
+
+.update-list img {
+	margin-right: 1rem;
+	width: 20px;
+}
+/* EMAIL-SECTION */
+
+.email-section-top {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 0.5rem;
+}
+
+.email-section-top label {
+	font-size: 0.75rem;
+	font-weight: 700;
+	color: var(--neutral-2);
+}
+.error {
+	font-size: 0.75rem;
+	font-weight: 700;
+	color: var(--tomato);
+}
+
+.email-section input,
+.email-section button,
+.dismiss {
+	width: 100%;
+	padding: 1rem 1.5rem;
+	border-radius: 8px;
+	cursor: pointer;
+}
+
+.email-section input {
+	font-size: 1rem;
+	border: 1px solid var(--border-neutral);
+	margin-bottom: 1rem;
+	outline: none;
+}
+.email-input:focus {
+	border: 1px solid #000;
+}
+
+.input-error,
+.input-error:focus {
+	background-color: var(--tomato-50);
+	color: var(--tomato);
+	border: 1px solid var(--border-red);
+	outline: 1px solid var(--border-red);
+}
+
+.email-section button,
+.dismiss {
+	position: relative;
+	font-size: 0.9rem;
+	font-weight: 700;
+	color: var(--white);
+	background-color: var(--neutral-2);
+	border: none;
+	overflow: hidden;
+	z-index: 1000;
+}
+.email-section button::before,
+.dismiss::before {
+	position: absolute;
+	content: '';
+	inset: 0;
+	background: linear-gradient(to right, #ff527b, #ff6a3a);
+	z-index: -1;
+	opacity: 0;
+	transition: 0.3s;
+}
+.email-section button:hover::before,
+.dismiss:hover::before {
+	opacity: 1;
+	z-index: -5;
+}
+.email-section button:hover,
+.dismiss:hover {
+	box-shadow: 0 10px 15px rgba(255, 106, 58, 0.4);
+}
+
+/* MEDIA QUERIES */
+@media (min-width: 768px) {
+	body {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		min-height: 100vh;
+	}
+	header {
+		order: 2;
+		background-image: url('./img/illustration-sign-up-desktop.svg');
+		width: 400px;
+		height: 593px;
+		border-radius: 20px;
+	}
+	.app-container {
+		max-width: 1440px;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		min-height: 0;
+		border: 25px solid var(--white);
+		border-radius: 20px;
+	}
+	main {
+		max-width: 30rem;
+		order: 1;
+		padding: 0 50px 0 25px;
+	}
+	main h1 {
+		font-size: 3.5rem;
+	}
+	main .main-paragraph {
+		margin: 1.75rem 0;
+	}
+	.update-list li:last-child {
+		margin-bottom: 2.75rem;
+	}
+	.email-section input,
+	.email-section button {
+		width: 100%;
+		padding: 1.25rem 1.5rem;
+		border-radius: 8px;
+	}
+
+	.popup {
+		height: 515px;
+		min-height: 0;
+		border-radius: 25px;
+		padding: 3.5rem;
+	}
+	.popup-body {
+		margin-top: 0;
+	}
+
+	.popup h2 {
+		font-size: 3.35rem;
+		line-height: 3.5rem;
+	}
+	.email-section-top label,
+	.error {
+		font-size: 0.8rem;
+	}
+	
+}
+/* CORRECT FONT SIZE < 576px !! */

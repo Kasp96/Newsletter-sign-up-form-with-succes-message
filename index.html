@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newsletter sign up form with succes message || FrontEnd Mentor</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!--  POPUP -->
+    <div class="popup">
+
+        <div class="popup-body">
+            <img src="./img/icon-success.svg" alt="">
+            <h2>Thanks for subscribing!</h2>
+            <p class="popup-info">A confirmation has been sent to <span class="email-adress"></span>. Please
+                open it and click the button inside to confirm your subscription.</p>
+        </div>
+
+        <button class="dismiss">Dismiss message</button>
+    </div>
+
+    </div>
+    <!-- MAIN APP -->
+    <div class="app-container">
+        <header></header>
+        <main>
+            <h1>Stay updated!</h1>
+            <p class="main-paragraph">Join 60,000+ product managers receiving monthly updates on:</p>
+
+            <ul class="update-list">
+                <li><img src="./img/icon-success.svg" alt="">Product discovery and building what matters</li>
+                <li><img src="./img/icon-success.svg" alt="">Measuring to ensure updates are a success</li>
+                <li><img src="./img/icon-success.svg" alt="">And much more!</li>
+            </ul>
+
+            <section class="email-section">
+
+                <div class="email-section-top">
+                    <label for="text">Email address</label>
+                    <p class="error"></p>
+                </div>
+                <input class="email-input" type="text" placeholder="email@company.com">
+                <button class="subscribe">Subscribe to monthly newsletter</button>
+
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
